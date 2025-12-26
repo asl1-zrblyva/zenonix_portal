@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ meqale.baslik }} | Zenonix</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #fdfdfd; line-height: 1.8; margin: 0; color: #333; }
+        .nav { padding: 20px 10%; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .container { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+        img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        h1 { font-size: 42px; color: #111; margin-bottom: 10px; }
+        .meta { color: #888; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .content { font-size: 19px; color: #444; white-space: pre-wrap; }
+        .back-btn { display: inline-block; margin-top: 50px; text-decoration: none; color: #1a73e8; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="nav"><a href="/" style="text-decoration: none; font-weight: bold; color: #1a73e8;">ZENONIX</a></div>
+    <div class="container">
+        {% if meqale.resim %}
+            <img src="{{ meqale.resim.url }}">
+        {% endif %}
+        <h1>{{ meqale.baslik }}</h1>
+        <div class="meta">Paylaşılma: {{ meqale.tarih|date:"d F Y" }} | Müəllif: {{ meqale.yazar.username }}</div>
+        <div class="content">{{ meqale.icerik }}</div>
+        <a href="/" class="back-btn">← Geri qayıt</a>
+    </div>
+</body>
+</html>
